@@ -2,33 +2,39 @@ body {
     font-family: Arial, sans-serif;
     background-color: #e6f7ff;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
     padding: 20px;
 }
 
 .umbrella-container {
     position: relative;
+    max-width: 100%;
 }
 
 .umbrella {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .logo {
     position: absolute;
-    bottom: 30px;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 80px;
-    max-height: 40px;
+    max-width: 20%;
+    max-height: 10%;
 }
 
+/* Color Options */
 .colors {
     display: flex;
     gap: 10px;
@@ -48,6 +54,7 @@ body {
     border: 2px solid black;
 }
 
+/* Typography */
 .title {
     font-size: 24px;
     font-weight: bold;
@@ -64,19 +71,19 @@ body {
     color: #666;
 }
 
+/* Upload Button */
 .upload-container {
-    margin: 10px auto;
-    position: relative;
-    width: 255px;
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    max-width: 255px;
+    margin: 10px auto;
     background-color: #009fe3;
     color: white;
-    border: none;
     padding: 12px 20px;
     border-radius: 5px;
-  
+    cursor: pointer;
 }
 
 .upload-btn {
@@ -86,12 +93,12 @@ body {
     background-color: #009fe3;
     color: white;
     border: none;
-    padding: 12px 20px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
-    font-weight: bold;
+    padding: 12px 20px;
 }
 
 .hidden-input {
@@ -103,6 +110,7 @@ body {
     margin-top: 10px;
 }
 
+/* File Info */
 .file-info {
     display: flex;
     align-items: center;
@@ -116,13 +124,14 @@ body {
     font-weight: bold;
 }
 
+/* Loader */
 .loader {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     display: none;
 }
@@ -138,4 +147,59 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}  
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .umbrella {
+        max-width: 300px;
+    }
+
+    .logo {
+        max-width: 25%;
+        max-height: 12%;
+    }
+
+    .upload-container, .upload-btn {
+        width: 90%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .umbrella {
+        max-width: 250px;
+    }
+
+    .logo {
+        max-width: 30%;
+        max-height: 15%;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .note {
+        font-size: 12px;
+    }
+
+    .color-option {
+        width: 25px;
+        height: 25px;
+    }
+
+    .upload-container, .upload-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
