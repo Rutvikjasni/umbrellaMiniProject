@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Umbrella</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="umbrella-container">
+            <div id="loader" class="loader">
+                <img src="./images/loader_icon.svg" id="loaderImage" class="loader-img">
+            </div> 
+            <img src="./images/lightblue umbrella.png" id="umbrella" class="umbrella">
+            <img id="logo" class="logo" style="display: none;">
+        </div>
+        <div>
+            <h1>Custom Umbrella</h1>
+            <div class="colors">
+                <div class="color-option" style="background: #E60073;" onclick="changeColor('pink', this, '#ffd9e6')"></div>
+                <div class="color-option selected" style="background: lightblue;" onclick="changeColor('lightblue', this, '#e6f7ff')"></div>
+                <div class="color-option" style="background: yellow;" onclick="changeColor('yellow', this, '#fffacd')"></div>
+            </div>
+            <div class="info-container">
+                <p class="title">Customize your umbrella</p>
+                <p class="subtitle">Upload a logo for an instant preview.</p>
+                <p class="note">.png and .jpg files only. Max file size is 5MB.</p>
+            </div>
+            <div class="upload-container">
+                <input type="file" id="logoUpload" class="hidden-input" accept="image/png, image/jpeg" onchange="uploadLogo()">
+                <img src="./images/upload_icon.svg" alt="Upload"> 
+                <button class="upload-btn" id="uploadBtn" onclick="document.getElementById('logoUpload').click()">
+                    UPLOAD LOGO
+                </button>
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <span class="remove-logo" onclick="removeLogo()">❌</span>
+                </div>
+            </div>
+            <p class="error" id="error-message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
